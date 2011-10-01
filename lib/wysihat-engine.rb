@@ -27,7 +27,7 @@ module ActionView
         "});"
 
         content_tag(:script, javascript, :type => 'text/javascript') <<
-        content_tag(:textarea, html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
+        content_tag(:textarea, ERB::Util.html_escape(options.delete('value') || value_before_type_cast(object)), options.merge(:class => 'wysihat_editor'))
       end
     end
 
